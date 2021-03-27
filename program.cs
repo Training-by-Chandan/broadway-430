@@ -1,7 +1,0 @@
-namespace  name
-{
-    class Name
-    {
-        
-    }
-}

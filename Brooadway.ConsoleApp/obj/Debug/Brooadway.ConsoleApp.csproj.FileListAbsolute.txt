@@ -1,0 +1,7 @@
+C:\Users\Chand\source\repos\Brooadway430\Brooadway.ConsoleApp\bin\Debug\Brooadway.ConsoleApp.exe.config
+C:\Users\Chand\source\repos\Brooadway430\Brooadway.ConsoleApp\bin\Debug\Brooadway.ConsoleApp.exe
+C:\Users\Chand\source\repos\Brooadway430\Brooadway.ConsoleApp\bin\Debug\Brooadway.ConsoleApp.pdb
+C:\Users\Chand\source\repos\Brooadway430\Brooadway.ConsoleApp\obj\Debug\Brooadway.ConsoleApp.csprojAssemblyReference.cache
+C:\Users\Chand\source\repos\Brooadway430\Brooadway.ConsoleApp\obj\Debug\Brooadway.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Chand\source\repos\Brooadway430\Brooadway.ConsoleApp\obj\Debug\Brooadway.ConsoleApp.exe
+C:\Users\Chand\source\repos\Brooadway430\Brooadway.ConsoleApp\obj\Debug\Brooadway.ConsoleApp.pdb
