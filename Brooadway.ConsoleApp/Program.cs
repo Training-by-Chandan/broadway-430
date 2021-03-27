@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Broadway;
 
 namespace Brooadway.ConsoleApp
 {
     class Program
     {
-        
+        public Human human = new Human();
         static void Main(string[] args)
         {
             string result = "y";
@@ -26,7 +27,9 @@ namespace Brooadway.ConsoleApp
 
                 //WeekDaysExample();
 
-                TableGenerate();
+                //TableGenerate();
+
+                StudentExample(); 
 
 
                 Console.WriteLine("Want to try more (y/n)?");
@@ -198,6 +201,32 @@ namespace Brooadway.ConsoleApp
             {
                 Console.WriteLine(number+" x "+i+" = "+(number*i));
             }
+
+        }
+
+        /// <summary>
+        /// We have implemented the properties and variable stuffs
+        /// </summary>
+        static void StudentExample()
+        {
+            Console.WriteLine("Student s1");
+            StudentExams s1 = new StudentExams();
+            s1.EnglishMarks = 21;
+            s1.MathMarks = 30;
+            Console.WriteLine("Total => " + s1.TotalMarks);
+            Console.WriteLine("Percentage => " + s1.Percentage);
+            Console.WriteLine("Division => " + s1.Division);
+
+
+            Console.WriteLine("Student s2");
+            StudentExams s2 = new StudentExams();
+            s2.EnglishMarks = 19;
+            s2.MathMarks = 3;
+            Console.WriteLine("Total => " + s2.TotalMarks);
+            Console.WriteLine("Percentage => " + s2.Percentage);
+            Console.WriteLine("Division => " + s2.Division);
+
+          
 
         }
     }
