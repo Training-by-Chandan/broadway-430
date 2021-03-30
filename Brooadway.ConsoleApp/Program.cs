@@ -226,6 +226,8 @@ namespace Brooadway.ConsoleApp
             Console.WriteLine("Percentage => " + s2.Percentage);
             Console.WriteLine("Division => " + s2.Division);
 
+            s1.Display();
+
           
 
         }

@@ -104,5 +104,22 @@ namespace Broadway
                 }
             }
         }
+
+        //access modifer, return type, Function name and parameters
+        public string Display(string name, int id, double amount, int studentid)
+        {
+            Console.WriteLine(name);
+            return name;
+        }
+
+        public void Display()
+        {
+
+        }
+        public int Display(string name)
+        {
+            return 1;
+        }
+
     }
 }
