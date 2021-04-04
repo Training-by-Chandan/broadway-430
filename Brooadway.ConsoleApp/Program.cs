@@ -29,7 +29,9 @@ namespace Brooadway.ConsoleApp
 
                 //TableGenerate();
 
-                StudentExample(); 
+                //StudentExample(); 
+
+                ConstructorOverloadingExample();
 
 
                 Console.WriteLine("Want to try more (y/n)?");
@@ -230,6 +232,30 @@ namespace Brooadway.ConsoleApp
 
           
 
+        }
+
+        static void ConstructorOverloadingExample()
+        {
+            Human h1 = new Human();
+            Human h3 = new Human();
+            Human h2 = new Human("Amit");
+
+            //h1.DisplayName();
+            //h2.DisplayName();
+
+
+            h1.IncreaseJby1(); // this will be 11
+            h1.ValueOfJ();
+            h2.IncreaseJby1(); //12
+            h2.ValueOfJ();
+            h3.IncreaseJby1(); //13
+            h3.DisplayName();
+            
+        }
+
+        static void SubClassExample()
+        {
+            Human.NewClass newclass = new Human.NewClass();
         }
     }
 

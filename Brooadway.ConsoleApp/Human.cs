@@ -8,12 +8,62 @@ namespace Broadway
 {
     public class Human
     {
-
-       
+        private string name;
+        public const string Type = "Homo Sapiens";
+        public readonly string LastName = "";
         public Human()
         {
+           // Type = "";
+            LastName = "Thapa";
+            this.name = "Babu";
+        }
+        public Human(string name, string LastName)
+        {
+            this.name = name;
+            this.LastName = LastName;
+        }
+
+        public Human(string LastName)
+        {
+            this.LastName = LastName;
+        }
+        public Human(string FirstName, int age)
+        {
+            this.name = FirstName;
+        }
+        public void DisplayName()
+        {
+            Console.WriteLine("My Name is " + this.name);
             
+            this.name = "John";
            
+        }
+
+        public void IncreaseJby1()
+        {
+            j++;
+        }
+       
+        public void ValueOfJ()
+        {
+            Console.WriteLine("Value of J : " + j);
+        }
+
+        public static int j = 10;
+
+        public class NewClass
+        {
+
+        }
+        //access modifier : public, private, protected, internal protected
+    }
+
+    public static class StaticClass
+    {
+        public static int i;
+        public static void Function1()
+        {
+
         }
     }
 
