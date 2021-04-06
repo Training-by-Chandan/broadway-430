@@ -1,5 +1,6 @@
 ﻿using System;
 using Broadway;
+using Brooadway.ConsoleApp.Inheritance;
 
 namespace Brooadway.ConsoleApp
 {
@@ -30,13 +31,26 @@ namespace Brooadway.ConsoleApp
 
                 //ConstructorOverloadingExample();
 
-                StaticAndNonStaticExample();
+                //StaticAndNonStaticExample();
+
+                InheritanceExample();
+
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
             } while (result == "y" || result == "Y");
 
             Console.ReadLine();
+        }
+
+        private static void InheritanceExample()
+        {
+            var animal = new Animal();
+            var name = animal.Name;
+            var AnimalTwo = new Animal("HOmo Sapiens");
+
+            var mammals = new Mammals();
+            Console.WriteLine(mammals.Name);
         }
 
         private static void TypeConversion()
