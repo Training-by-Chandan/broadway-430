@@ -14,6 +14,8 @@ namespace Brooadway.ConsoleApp.Inheritance
             Name = name;
         }
 
+        public string LastName { get; set; }
+
         public string Name { get; set; }
 
         public void Walk()
@@ -23,6 +25,23 @@ namespace Brooadway.ConsoleApp.Inheritance
 
         protected void ProtectedFunction()
         {
+        }
+
+        public static Animal operator +(Animal a1, Animal a2)
+        {
+            var sumName = a1.Name + " " + a2.Name;
+            var sumLastName = a1.LastName + " " + a2.LastName;
+            return new Animal {Name = sumName, LastName = sumLastName};
+        }
+
+        public static bool operator !=(Animal a1, Animal a2)
+        {
+            return a1.Name != a2.Name || a1.LastName != a2.LastName;
+        }
+
+        public static bool operator ==(Animal a1, Animal a2)
+        {
+            return a1.Name == a2.Name && a1.LastName == a2.LastName;
         }
     }
 

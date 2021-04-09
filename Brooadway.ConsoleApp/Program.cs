@@ -27,14 +27,19 @@ namespace Brooadway.ConsoleApp
 
                 //TableGenerate();
 
-                //StudentExample(); 
+                //StudentExample();
 
                 //ConstructorOverloadingExample();
 
                 //StaticAndNonStaticExample();
 
-                InheritanceExample();
+                //this function contains code where inheritance is properly explained
+                //InheritanceExample();
 
+
+                //OperatorOverloadingExample();
+
+                PolymorphismExample();
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
@@ -42,6 +47,39 @@ namespace Brooadway.ConsoleApp
 
             Console.ReadLine();
         }
+
+        private static void PolymorphismExample()
+        {
+            Drawing circle = new Circle();
+            
+            Console.WriteLine("Area :" + circle.Area());
+
+            Drawing square = new Square();
+            
+            Console.WriteLine("Area :" + square.Area());
+
+            Drawing rectangle = new Rectangle();
+            Console.WriteLine("Area :" + rectangle.Area());
+        }
+
+
+        private static void OperatorOverloadingExample()
+        {
+            var a1 = new Animal();
+            a1.Name = "Dog";
+            a1.LastName = "Gates";
+            var a2 = new Animal();
+            a2.Name = "Cat";
+            a2.LastName = "Gates";
+            var str = a1 + a2;
+
+            Console.WriteLine("final firstname => " + str.Name);
+            Console.WriteLine("final lastname => " + str.LastName);
+
+            if (a1 == a2) Console.WriteLine("both are equal");
+            else Console.WriteLine("Both are not equal");
+        }
+
 
         private static void InheritanceExample()
         {
