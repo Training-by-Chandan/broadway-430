@@ -51,11 +51,11 @@ namespace Brooadway.ConsoleApp
         private static void PolymorphismExample()
         {
             Drawing circle = new Circle();
-            
+
             Console.WriteLine("Area :" + circle.Area());
 
             Drawing square = new Square();
-            
+
             Console.WriteLine("Area :" + square.Area());
 
             Drawing rectangle = new Rectangle();
