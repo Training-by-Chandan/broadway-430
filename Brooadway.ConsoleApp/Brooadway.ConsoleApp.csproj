@@ -46,6 +46,7 @@
     <Compile Include="Drawing.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Inheritance\Animal.cs" />
+    <Compile Include="Interface\IArea.cs" />
     <Compile Include="NSAS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using Broadway;
 using Brooadway.ConsoleApp.Inheritance;
+using interfaces = Brooadway.ConsoleApp.Interface;
 
 namespace Brooadway.ConsoleApp
 {
@@ -39,13 +40,59 @@ namespace Brooadway.ConsoleApp
 
                 //OperatorOverloadingExample();
 
-                PolymorphismExample();
+                //PolymorphismExample();
+
+                FactoryInterfaceExample();
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
             } while (result == "y" || result == "Y");
 
             Console.ReadLine();
+        }
+
+
+        public static void FactoryInterfaceExample()
+        {
+            Console.WriteLine("1. Circle\n2. Square\n3. Rectangle");
+            var choice = Convert.ToInt32(Console.ReadLine());
+            interfaces.IDrawing drawingObj;
+
+            switch (choice)
+            {
+                case 1:
+                    drawingObj = new interfaces.Cirle();
+                    break;
+                case 2:
+                    drawingObj = new interfaces.Square();
+                    break;
+                case 3:
+                    drawingObj = new interfaces.Rectangle();
+                    break;
+                default:
+                    return;
+                    break;
+            }
+
+            drawingObj.TakeInput();
+            Console.WriteLine("Area = >" + drawingObj.Area());
+            Console.WriteLine("Perimeter = >" + drawingObj.Perimeter());
+        }
+
+        public static void InterfaceExplained()
+        {
+            var squareObj = new interfaces.Square();
+            interfaces.IArea areaInt = squareObj;
+
+            var circleObj = new interfaces.Cirle();
+            //circleObj.Add();
+            areaInt = circleObj;
+
+
+            interfaces.IPerimeter perimeterInt = circleObj;
+            perimeterInt = squareObj;
+
+            interfaces.IDrawing drawingInt = squareObj;
         }
 
         private static void PolymorphismExample()
