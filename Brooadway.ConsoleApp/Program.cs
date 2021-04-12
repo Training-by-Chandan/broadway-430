@@ -1,5 +1,6 @@
 ﻿using System;
 using Broadway;
+using Brooadway.ConsoleApp.Abstract;
 using Brooadway.ConsoleApp.Inheritance;
 using interfaces = Brooadway.ConsoleApp.Interface;
 
@@ -42,13 +43,50 @@ namespace Brooadway.ConsoleApp
 
                 //PolymorphismExample();
 
-                FactoryInterfaceExample();
+                //FactoryInterfaceExample();
+
+                //AbstractExample();
+
+                FactoryAbstractExample();
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
             } while (result == "y" || result == "Y");
 
             Console.ReadLine();
+        }
+
+        public static void AbstractExample()
+        {
+            // DrawingAbstract daAbstract = new DrawingAbstract();
+            DrawingAbstract circleAbs = new CircleAbs();
+            circleAbs.TakeInput();
+            Console.WriteLine("Area = > " + circleAbs.Area());
+            circleAbs.Display();
+        }
+
+        public static void FactoryAbstractExample()
+        {
+            Console.WriteLine("1. Circle\n2. Square");
+            var choice = Convert.ToInt32(Console.ReadLine());
+            DrawingAbstract drawingObj;
+
+            switch (choice)
+            {
+                case 1:
+                    drawingObj = new CircleAbs();
+                    break;
+                case 2:
+                    drawingObj = new SquareAbs();
+                    break;
+                default:
+                    return;
+                    break;
+            }
+
+            drawingObj.TakeInput();
+            Console.WriteLine("Area = >" + drawingObj.Area());
+            drawingObj.Display();
         }
 
 
@@ -69,6 +107,9 @@ namespace Brooadway.ConsoleApp
                 case 3:
                     drawingObj = new interfaces.Rectangle();
                     break;
+                //case 4:
+                //    drawingObj = new Triangle();
+                //    break;
                 default:
                     return;
                     break;
