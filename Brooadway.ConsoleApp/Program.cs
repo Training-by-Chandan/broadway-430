@@ -1,6 +1,7 @@
 ﻿using System;
 using Broadway;
 using Brooadway.ConsoleApp.Abstract;
+using Brooadway.ConsoleApp.CustomStack;
 using Brooadway.ConsoleApp.Inheritance;
 using interfaces = Brooadway.ConsoleApp.Interface;
 
@@ -47,13 +48,75 @@ namespace Brooadway.ConsoleApp
 
                 //AbstractExample();
 
-                FactoryAbstractExample();
+                //FactoryAbstractExample();
+
+                //ArrayExample();
+
+                StackType1Implementation();
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
             } while (result == "y" || result == "Y");
 
             Console.ReadLine();
+        }
+
+        private static void StackType1Implementation()
+        {
+            var stack = new StackType1();
+
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            stack.Push(6);
+            stack.Display();
+
+            stack.Pop();
+            stack.Display();
+
+            stack.Push(5);
+            stack.Push(7);
+            stack.Display();
+
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
+            stack.Display();
+
+            var stack2 = new StackType1(15);
+        }
+
+        private static void ArrayExample()
+        {
+            var arrayInt = new int[2]; //element 1 and element 2
+            //element 1 - item number 1, index 0
+            //element 2 -> item number 2, index 1
+            // if i try to add new element then index out of bound exception
+
+            arrayInt[0] = 10;
+            arrayInt[1] = 20;
+
+            //copy array
+            var newArr = new int[3];
+            //looping 2 times with i=0 and i=1
+            for (var i = 0; i < arrayInt.Length; i++)
+                newArr[i] = arrayInt[i];
+            //in first loop 
+            //newArr[0]=arrayInt[0] => when i=0
+            //newArr[1]=arrayInt[1] => when i=1
+
+            arrayInt = newArr;
+
+            Array.Resize(ref arrayInt, arrayInt.Length + 1);
+
+            var length = arrayInt.Length;
+
+            Array.Reverse(arrayInt);
+            Array.Resize(ref arrayInt, arrayInt.Length - 1);
         }
 
         public static void AbstractExample()
