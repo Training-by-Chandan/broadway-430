@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Brooadway.ConsoleApp.CustomStack
 {
@@ -222,6 +223,48 @@ namespace Brooadway.ConsoleApp.CustomStack
         }
 
         public static void SomeFunction<T1, T2>(T1 item1, T1 item2, T2 item3) where T1 : IAnimal where T2 : ILivinThing
+        {
+        }
+    }
+
+
+    public class SomeClass
+    {
+        public static void Function1(int i)
+        {
+            if (i == 0)
+                throw new CustomException("Custom Exception : i cannot be 0");
+            if (i == 5)
+                throw new Exception("Exception Class : i cannot be 5");
+            Console.WriteLine("Everything is good");
+        }
+    }
+
+    [Serializable]
+    public class CustomException : Exception
+    {
+        //
+        // For guidelines regarding the creation of new exception types, see
+        //    http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/cpconerrorraisinghandlingguidelines.asp
+        // and
+        //    http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dncscol/html/csharp07192001.asp
+        //
+
+        public CustomException()
+        {
+        }
+
+        public CustomException(string message) : base(message)
+        {
+        }
+
+        public CustomException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
+        protected CustomException(
+            SerializationInfo info,
+            StreamingContext context) : base(info, context)
         {
         }
     }

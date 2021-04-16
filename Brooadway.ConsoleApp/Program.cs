@@ -9,6 +9,7 @@ namespace Brooadway.ConsoleApp
 {
     internal class Program
     {
+        private static Student s;
         public Human human = new Human();
 
         private static void Main(string[] args)
@@ -52,13 +53,53 @@ namespace Brooadway.ConsoleApp
 
                 //ArrayExample();
 
-                StackType1Implementation();
+                //StackTypeGenericExample();
+
+                //StackType1Implementation();
+
+                //ErrorHandlingExample();
+
+                ErrorHandling2();
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
             } while (result == "y" || result == "Y");
 
             Console.ReadLine();
+        }
+
+        private static void ErrorHandling2()
+        {
+            try
+            {
+                Console.WriteLine("Enter a number");
+                var number = Convert.ToInt32(Console.ReadLine());
+                SomeClass.Function1(number);
+            }
+            catch (CustomException ce)
+            {
+                Console.WriteLine("I have caught custom exception, I can do here whatever I like");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static void ErrorHandlingExample()
+        {
+            try
+            {
+                Console.WriteLine("Before Error");
+                s.Id = 10;
+                Console.WriteLine("Successfully completed");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("la exception aayo hai");
+            }
+
+            Console.WriteLine("Function Completed");
         }
 
         private static void FunctionTemplatingExample()
