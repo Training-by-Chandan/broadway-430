@@ -61,6 +61,34 @@ namespace Brooadway.ConsoleApp
             Console.ReadLine();
         }
 
+        private static void FunctionTemplatingExample()
+        {
+            Console.WriteLine(FunctionTemplating.Equals(1, 1));
+            Console.WriteLine(FunctionTemplating.Equals("abc", "xyz"));
+            var dog = new Dog();
+            var cat = new Cat();
+            var horse = new Horse();
+            var rose = new Rose();
+            Console.WriteLine(FunctionTemplating.Equals(dog, dog));
+
+            FunctionTemplating.SomeFunction(dog, dog, cat);
+        }
+
+        private static void StackTypeGenericExample()
+        {
+            var stackInt = new StackTypeGeneric<int>();
+            var stackString = new StackTypeGeneric<string>();
+            var stackChar = new StackTypeGeneric<char>();
+            var stackStudent = new StackTypeGeneric<Student>();
+
+            var dogStack = new LivingThingStack<Dog>();
+            var catStack = new LivingThingStack<Cat>();
+            var horseStack = new LivingThingStack<Horse>();
+            var roseStack = new LivingThingStack<Rose>();
+
+            var plantlivingThingStack = new LivingThingStack<Dog, Rose>();
+        }
+
         private static void StackType1Implementation()
         {
             var stack = new StackType1();
