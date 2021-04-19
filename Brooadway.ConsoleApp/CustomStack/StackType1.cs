@@ -209,14 +209,31 @@ namespace Brooadway.ConsoleApp.CustomStack
     {
     }
 
-    public class LivingThingStack<T1, T2> where T1 : class
-        where T2 : IPlant
+    public class Mammal
+    {
+    }
+
+    public class Whale : Mammal
+    {
+    }
+
+    public class Monkey : Mammal
+    {
+    }
+
+    public class LivingThingStack<T1, T2, T3>
+        where T2 : IPlant where T3 : Mammal
     {
     }
 
 
     public class FunctionTemplating
     {
+        private void Function1()
+        {
+            var livingStack = new LivingThingStack<string, Rose, Whale>();
+        }
+
         public static bool Equals<T>(T item1, T item2)
         {
             return item1.ToString() == item2.ToString();

@@ -9,7 +9,7 @@ namespace Brooadway.ConsoleApp
 {
     internal class Program
     {
-        private static Student s;
+        private static Student s; // is null
         public Human human = new Human();
 
         private static void Main(string[] args)
@@ -59,13 +59,46 @@ namespace Brooadway.ConsoleApp
 
                 //ErrorHandlingExample();
 
-                ErrorHandling2();
+                //ErrorHandling2();
+
+                PassByExample();
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
             } while (result == "y" || result == "Y");
 
             Console.ReadLine();
+        }
+
+        private static void PassByExample()
+        {
+            var val = 20;
+            var a = new Arithmetic();
+            var b = new Arithmetic();
+            Console.WriteLine("Pass by value");
+            Console.WriteLine("From a");
+            a.Addby1(val);
+            a.Addby1(val);
+            a.Addby1(val);
+            a.Addby1(val);
+            Console.WriteLine("From b");
+            b.Addby1(val);
+
+            Console.WriteLine("Pass by Reference");
+            Console.WriteLine("From a");
+            a.Addby1Ref(ref val);
+            a.Addby1Ref(ref val);
+            a.Addby1Ref(ref val);
+            a.Addby1Ref(ref val);
+            Console.WriteLine("From b");
+            b.Addby1Ref(ref val);
+
+
+            var age = 30;
+            var str = a.SomeFunction(val, out age);
+
+            Console.WriteLine("Str => " + str);
+            Console.WriteLine("age => " + age);
         }
 
         private static void ErrorHandling2()
@@ -90,6 +123,7 @@ namespace Brooadway.ConsoleApp
         {
             try
             {
+                s = new Student();
                 Console.WriteLine("Before Error");
                 s.Id = 10;
                 Console.WriteLine("Successfully completed");
@@ -127,7 +161,7 @@ namespace Brooadway.ConsoleApp
             var horseStack = new LivingThingStack<Horse>();
             var roseStack = new LivingThingStack<Rose>();
 
-            var plantlivingThingStack = new LivingThingStack<Dog, Rose>();
+            // var plantlivingThingStack = new LivingThingStack<Dog, Rose>();
         }
 
         private static void StackType1Implementation()
