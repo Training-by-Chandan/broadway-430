@@ -46,6 +46,7 @@
     <Compile Include="Abstract\DrawingAbstract.cs" />
     <Compile Include="Arithmetic.cs" />
     <Compile Include="CustomStack\StackType1.cs" />
+    <Compile Include="Delegates\Deleg.cs" />
     <Compile Include="Drawing.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Inheritance\Animal.cs" />

@@ -2,6 +2,7 @@
 using Broadway;
 using Brooadway.ConsoleApp.Abstract;
 using Brooadway.ConsoleApp.CustomStack;
+using Brooadway.ConsoleApp.Delegates;
 using Brooadway.ConsoleApp.Inheritance;
 using interfaces = Brooadway.ConsoleApp.Interface;
 
@@ -10,6 +11,8 @@ namespace Brooadway.ConsoleApp
     internal class Program
     {
         private static Student s; // is null
+
+        private static readonly Deleg d = new Deleg();
         public Human human = new Human();
 
         private static void Main(string[] args)
@@ -61,13 +64,52 @@ namespace Brooadway.ConsoleApp
 
                 //ErrorHandling2();
 
-                PassByExample();
+                //PassByExample();
+
+                DelegateExample();
+
+                //CallDeleg();
 
                 Console.WriteLine("Want to try more (y/n)?");
                 result = Console.ReadLine();
             } while (result == "y" || result == "Y");
 
             Console.ReadLine();
+        }
+
+        private static void DelegateExample()
+        {
+            var dg = new Deleg();
+            dg.OnClick += D_OnClick;
+            dg.OnClick += D_OnClick1;
+
+            d.OnClick += D_OnClick;
+            d.OnClick += D_OnClick;
+            d.OnClick += D_OnClick1;
+            d.OnClick += D_OnClick1;
+
+
+            var str = Console.ReadLine();
+            dg.Call(str);
+
+            Console.WriteLine("");
+            d.Call(str);
+        }
+
+        private static void CallDeleg()
+        {
+            d.OnClick -= D_OnClick;
+            d.Call("Sailesh");
+        }
+
+        private static void D_OnClick1(string str)
+        {
+            Console.WriteLine("Someone called with str => " + str);
+        }
+
+        private static void D_OnClick(string strs)
+        {
+            Console.WriteLine(nameof(D_OnClick) + " called with str => " + strs);
         }
 
         private static void PassByExample()
